@@ -1,0 +1,7 @@
+## VALU ADDS
+.DS_Store
+.idea
+composer.lock
+vendor/
+web/
+wwwroot/

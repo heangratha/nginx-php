@@ -1,0 +1,27 @@
+---
+
+version: '3.7'
+
+services:
+  web:
+    image: rathaheang/nginx-php:${php_tag}
+    environment:
+      LOCAL_USER_ID: 1001
+    volumes:
+      - ./wwwroot:/var/www/html
+      - ./docker/php.ini:/etc/php/${php_tag}/fpm/php.ini
+      - ./docker/default.conf:/etc/nginx/sites-available/default
+    ports:
+      - 80:80
+  db:
+    image: mysql:${mysql_tag}
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: database
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+volumes:
+  db-data:

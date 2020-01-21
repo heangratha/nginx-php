@@ -28,7 +28,7 @@ This repository for setup wordpress with docker nginx as web service
 
 4. Update .env file with your specific php and mysql version
 
-        php_tag=7.3
+        php_tag=7.4
         mysql_tag=5.7
 
 5. Up docker containers

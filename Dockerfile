@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 
 ENV TZ=Asia/Phnom_Penh
-ENV PHP_VERSION=7.3
+ENV PHP_VERSION=7.4
 RUN apt-get -qq update && \
     apt-get -yqq install apt-transport-https lsb-release ca-certificates wget && \
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
